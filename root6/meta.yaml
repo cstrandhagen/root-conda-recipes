@@ -24,7 +24,7 @@ requirements:
         - qt # [linux]
         - sqlite 
         - fftw
-        - pcre
+        - pcre 8.35
         - libxml2
         - graphviz # [linux]
         #- cmake >=3.2.3
@@ -60,20 +60,20 @@ test:
 
    files:
          - ../tests/test_root.py
-         - ../tests/test_stl.py
+         #- ../tests/test_stl.py
 
    commands:
          - root -b -q
          - which root
          - source ${PREFIX}/bin/thisroot.sh
          - python test_root.py
-         - python test_stl.py
+         #- python test_stl.py
          
    imports:
         #- ROOT
    requires:
          - numpy
-         - rootpy
+         #- rootpy
 
 about:
     home: http://root.cern.ch/

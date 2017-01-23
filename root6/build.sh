@@ -71,7 +71,7 @@ cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
--Dbuiltin-lzma=ON \
+-Dbuiltin_lzma=ON \
 -Dbuiltin_zlib=ON \
 -Dbuiltin_freetype=ON \
 -Dcxx11=ON \
@@ -79,6 +79,11 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Droofit=ON \
 -Dopengl=OFF \
 -Dgviz=OFF \
+-Dhttp=ON \
+-Dsoversion=ON \
+-Dfftw3=ON \
+-Dmathmore=ON \
+-Dminuit2=ON \
 || return 1;
 #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
 #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
@@ -86,7 +91,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 
 #-Dbuiltin_gsl=ON \
 
-make -j2 || return 1;
+make -j8 || return 1;
 make install || return 1;
 
 return 0;
